@@ -49,12 +49,6 @@ class SpecificCharacterFragment: Fragment () {
 
 
 
-        binding.ivBackBtn.setOnClickListener(){
-            findNavController().navigateUp()
-        }
-        
-
-
 
         val id = SpecificCharacterFragmentArgs.fromBundle(requireArguments()).id
 
