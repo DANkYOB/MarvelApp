@@ -2,6 +2,9 @@ package com.codercampy.marvelapp
 
 import android.content.Context
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.codercampy.marvelapp.adapter.SpecificAdapter
+import com.codercampy.marvelapp.model.ItemModel
 import java.security.MessageDigest
 
 const val PUBLIC_KEY = "b80140659d66914120561b29585385cd"

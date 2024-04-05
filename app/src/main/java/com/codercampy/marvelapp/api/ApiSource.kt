@@ -12,4 +12,10 @@ object ApiSource {
 
     val marvelApi = retrofit.create(MarvelApi::class.java)
 
+    val comicsApi = retrofit.create(MarvelApi::class.java)
+
+    val seriesApi = retrofit.create(MarvelApi::class.java)
+
+
+
 }

@@ -6,16 +6,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.codercampy.marvelapp.databinding.ItemCharacterBinding
-import com.codercampy.marvelapp.model.Character
+import com.codercampy.marvelapp.model.ItemModel
 
 class CharactersAdapter : RecyclerView.Adapter<ViewHolder>() {
 
-    private val characters = ArrayList<Character>()
+    private val itemModels = ArrayList<ItemModel>()
+    private var listener: CharacterAdapterListener? = null
 
-    fun setCharacters(items: List<Character>) {
-        val start = characters.size
-        characters.addAll(items)
-        notifyItemRangeInserted(start, characters.size)
+    fun setCharacters(items: List<ItemModel>) {
+        val start = itemModels.size
+        itemModels.addAll(items)
+        notifyItemRangeInserted(start, itemModels.size)
+    }
+
+    fun setListener(listener: CharacterAdapterListener) {
+        this.listener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,26 +29,30 @@ class CharactersAdapter : RecyclerView.Adapter<ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return characters.size
+        return itemModels.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindData(characters[position])
+        holder.bindData(itemModels[position])
+        holder.binding.root.setOnClickListener {
+            val ch = itemModels[position]
+            listener?.onCharacterClicked(ch)
+        }
     }
 
 }
 
-class ViewHolder(private val binding: ItemCharacterBinding) : RecyclerView.ViewHolder(binding.root) {
+class ViewHolder( val binding: ItemCharacterBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bindData(character: Character) {
-        binding.tvTitle.text = character.name
-        if (character.description.isEmpty()) {
+    fun bindData(itemModel: ItemModel) {
+        binding.tvTitle.text = itemModel.name
+        if (itemModel.description.isEmpty()) {
             binding.tvDescription.visibility = View.GONE
         } else {
             binding.tvDescription.visibility = View.VISIBLE
-            binding.tvDescription.text = character.description
+            binding.tvDescription.text = itemModel.description
         }
-        Glide.with(binding.ivImage).load(character.thumbnail.getUrl()).into(binding.ivImage)
+        Glide.with(binding.ivImage).load(itemModel.thumbnail.getUrl()).into(binding.ivImage)
     }
 
 }

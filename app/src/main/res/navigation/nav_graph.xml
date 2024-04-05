@@ -3,26 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/charactersFragment">
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.codercampy.marvelapp.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/charactersFragment"
+        android:name="com.codercampy.marvelapp.ui.CharactersFragment"
+        android:label="CharactersFragment"
+        tools:layout="@layout/fragment_characters">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_charactersFragment_to_specificCharacterFragment"
+            app:destination="@id/specificCharacterFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.codercampy.marvelapp.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+        android:id="@+id/specificCharacterFragment"
+        android:name="com.codercampy.marvelapp.ui.SpecificCharacterFragment"
+        android:label="SpecificCharacterFragment"
+        tools:layout="@layout/fragment_specific_character">
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 </navigation>

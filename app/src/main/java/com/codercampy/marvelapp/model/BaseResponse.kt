@@ -9,5 +9,5 @@ data class DataResponse(
     val count: Int,
     val limit: Int,
     val offset: Int,
-    val results: List<Character>
+    val results: List<ItemModel>
 )

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codercampy.marvelapp.PRIVATE_KEY
@@ -42,6 +43,11 @@ class CharactersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = CharactersAdapter()
+        adapter.setListener {
+            findNavController().navigate(
+                CharactersFragmentDirections.actionCharactersFragmentToSpecificCharacterFragment(it.id)
+            )
+        }
         binding.recyclerView.adapter = adapter
         fetchCharactersAndShow()
 
@@ -73,8 +79,6 @@ class CharactersFragment : Fragment() {
                 override fun onResponse(p0: Call<BaseResponse?>, p1: Response<BaseResponse?>) {
                     val res = p1.body()?.data
                     if (res != null) {
-                        binding.tvApiData.text =
-                            "Showing ${adapter.itemCount + res.count} out of ${res.total} characters"
                         adapter.setCharacters(res.results)
                     }
                     isFetching = false
