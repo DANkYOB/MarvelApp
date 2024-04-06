@@ -54,6 +54,8 @@ class SpecificCharacterFragment: Fragment () {
 
         Glide.with(binding.imageSpecific).load(item.thumbnail.getUrl()).into(binding.imageSpecific)
 
+        binding.tvSpecificChar.text = item.name
+
         val ts = System.currentTimeMillis()
         val hash = "$ts$PRIVATE_KEY$PUBLIC_KEY".md5()
 

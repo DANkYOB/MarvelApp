@@ -17,13 +17,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/image_specific"
+            <TextView
+                android:id="@+id/tv_specific_char"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:padding="8dp"
+                android:textSize="24sp"
+                android:textColor="#F2EAD3"
+                android:fontFamily="@font/kghappy"
+                android:gravity="center"
+                tools:text="Iron Man"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_image"
+                android:layout_width="356dp"
+                android:layout_height="481dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_specific_char"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/image_specific"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
 
 
             <TextView
@@ -31,14 +64,14 @@
                 style="@style/ClickableTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="50dp"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_specific"
+                app:layout_constraintTop_toBottomOf="@+id/mcv_image"
                 android:text="Comics" />
 
             <androidx.recyclerview.widget.RecyclerView
