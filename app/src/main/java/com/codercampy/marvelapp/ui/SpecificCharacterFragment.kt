@@ -50,7 +50,9 @@ class SpecificCharacterFragment: Fragment () {
 
 
 
-        val id = SpecificCharacterFragmentArgs.fromBundle(requireArguments()).id
+        val item = SpecificCharacterFragmentArgs.fromBundle(requireArguments()).item
+
+        Glide.with(binding.imageSpecific).load(item.thumbnail.getUrl()).into(binding.imageSpecific)
 
         val ts = System.currentTimeMillis()
         val hash = "$ts$PRIVATE_KEY$PUBLIC_KEY".md5()
@@ -64,7 +66,7 @@ class SpecificCharacterFragment: Fragment () {
 
 
 
-        ApiSource.comicsApi.getComics(id, ts, PUBLIC_KEY,hash,offset,limit)
+        ApiSource.comicsApi.getComics(item.id, ts, PUBLIC_KEY,hash,offset,limit)
             .enqueue(object : Callback<ComicsResponse?> {
             override fun onResponse(p0: Call<ComicsResponse?>, p1: Response<ComicsResponse?>) {
                 val res = p1.body()?.data?.results
@@ -84,7 +86,7 @@ class SpecificCharacterFragment: Fragment () {
         })
 
 
-        ApiSource.seriesApi.getSeries(id, ts, PUBLIC_KEY,hash,offset,limit)
+        ApiSource.seriesApi.getSeries(item.id, ts, PUBLIC_KEY,hash,offset,limit)
             .enqueue(object : Callback<SeriesResponse?> {
                 override fun onResponse(p0: Call<SeriesResponse?>, p1: Response<SeriesResponse?>) {
                     val res = p1.body()?.data?.results

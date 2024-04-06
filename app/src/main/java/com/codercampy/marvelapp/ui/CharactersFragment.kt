@@ -45,7 +45,7 @@ class CharactersFragment : Fragment() {
         adapter = CharactersAdapter()
         adapter.setListener {
             findNavController().navigate(
-                CharactersFragmentDirections.actionCharactersFragmentToSpecificCharacterFragment(it.id)
+                CharactersFragmentDirections.actionCharactersFragmentToSpecificCharacterFragment(it)
             )
         }
         binding.recyclerView.adapter = adapter

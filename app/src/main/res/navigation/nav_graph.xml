@@ -18,8 +18,16 @@
         android:name="com.codercampy.marvelapp.ui.SpecificCharacterFragment"
         android:label="SpecificCharacterFragment"
         tools:layout="@layout/fragment_specific_character">
+        <action
+            android:id="@+id/action_specificCharacterFragment_to_comicFragment"
+            app:destination="@id/comicFragment" />
         <argument
-            android:name="id"
-            app:argType="integer" />
+            android:name="item"
+            app:argType="com.codercampy.marvelapp.model.ItemModel" />
     </fragment>
+    <fragment
+        android:id="@+id/comicFragment"
+        android:name="com.codercampy.marvelapp.ui.ComicFragment"
+        android:label="ComicFragment"
+        tools:layout="@layout/fragment_comics"/>
 </navigation>
