@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.codercampy.firebaseclass.databinding.FragmentPhoneNumberLoginBinding
+import com.codercampy.marvelapp.databinding.FragmentPhoneNumberLoginBinding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions

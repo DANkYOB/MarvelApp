@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:hint="Phone"
         android:layout_marginTop="320dp"
-        android:background="#92121"
+        android:background="@color/black"
         android:textColorHint="@color/white"
-        android:alpha="0.7"
+        android:alpha="0.5"
         app:boxCornerRadiusBottomEnd="16dp"
         app:boxCornerRadiusBottomStart="16dp"
         app:boxCornerRadiusTopEnd="16dp"
@@ -27,15 +27,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="172dp"
+            android:layout_height="58dp"
             android:inputType="number"
             android:textColor="@color/white"
             app:boxCornerRadiusBottomEnd="16dp"
             app:boxCornerRadiusBottomStart="16dp"
             app:boxCornerRadiusTopEnd="16dp"
             app:boxCornerRadiusTopStart="16dp"
-            tools:text="+91 1234567891"/>
+            tools:text="+91 1234567891" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="#92121"
+        android:backgroundTint="@color/black"
         android:text="Send Code"
         android:alpha="0.6"
         app:cornerRadius="8dp"

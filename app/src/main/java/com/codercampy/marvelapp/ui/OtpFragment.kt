@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.codercampy.firebaseclass.MainActivity
-import com.codercampy.firebaseclass.databinding.FragmentOtpBinding
+import com.codercampy.marvelapp.MainActivity
+import com.codercampy.marvelapp.databinding.FragmentOtpBinding
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.ktx.auth
