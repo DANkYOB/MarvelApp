@@ -12,6 +12,12 @@
         <action
             android:id="@+id/action_charactersFragment_to_specificCharacterFragment"
             app:destination="@id/specificCharacterFragment" />
+        <action
+            android:id="@+id/action_charactersFragment_to_comicFragment"
+            app:destination="@id/comicFragment" />
+        <action
+            android:id="@+id/action_charactersFragment_to_seriesFragment"
+            app:destination="@id/seriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/specificCharacterFragment"
@@ -24,10 +30,26 @@
         <argument
             android:name="item"
             app:argType="com.codercampy.marvelapp.model.ItemModel" />
+        <action
+            android:id="@+id/action_specificCharacterFragment_to_seriesFragment"
+            app:destination="@id/seriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/comicFragment"
         android:name="com.codercampy.marvelapp.ui.ComicFragment"
         android:label="ComicFragment"
-        tools:layout="@layout/fragment_comics"/>
+        tools:layout="@layout/fragment_comics">
+        <argument
+            android:name="item"
+            app:argType="com.codercampy.marvelapp.model.ItemModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/seriesFragment"
+        android:name="com.codercampy.marvelapp.ui.SeriesFragment"
+        android:label="SeriesFragment"
+        tools:layout="@layout/fragment_series">
+        <argument
+            android:name="item"
+            app:argType="com.codercampy.marvelapp.model.ItemModel" />
+    </fragment>
 </navigation>

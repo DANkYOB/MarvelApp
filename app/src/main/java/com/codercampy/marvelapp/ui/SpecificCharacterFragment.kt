@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -65,7 +66,7 @@ class SpecificCharacterFragment: Fragment () {
 
 
         adapterComics.setListener{
-            findNavController().navigate(SpecificCharacterFragmentDirections.actionSpecificCharacterFragmentToComicFragment())
+            findNavController().navigate(SpecificCharacterFragmentDirections.actionSpecificCharacterFragmentToComicFragment(it))
         }
 
 
@@ -75,7 +76,9 @@ class SpecificCharacterFragment: Fragment () {
         binding.rvSeries.adapter = adapterSeries
 
 
-
+        adapterSeries.setListener{
+            findNavController().navigate(SpecificCharacterFragmentDirections.actionSpecificCharacterFragmentToSeriesFragment(it))
+        }
 
 
 
@@ -118,7 +121,16 @@ class SpecificCharacterFragment: Fragment () {
 
             })
 
+        requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                findNavController().navigateUp()
+            }
+        })
+
 
     }
+
+
+
 }
 

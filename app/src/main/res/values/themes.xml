@@ -6,4 +6,17 @@
     </style>
 
     <style name="Theme.MarvelApp" parent="Base.Theme.MarvelApp" />
+
+    <style name="ClickableImageView">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/actionBarItemBackground</item>
+    </style>
+
+    <style name="ClickableTextView">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
 </resources>

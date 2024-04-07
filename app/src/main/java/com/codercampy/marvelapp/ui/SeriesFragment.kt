@@ -9,32 +9,31 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.codercampy.marvelapp.databinding.FragmentComicsBinding
+import com.codercampy.marvelapp.databinding.FragmentSeriesBinding
 
-class ComicFragment:Fragment() {
+class SeriesFragment:Fragment() {
 
-    private lateinit var binding: FragmentComicsBinding
+    private lateinit var binding: FragmentSeriesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentComicsBinding.inflate(layoutInflater)
+        binding = FragmentSeriesBinding.inflate(layoutInflater)
         return binding.root
     }
+
 
     @SuppressLint("CheckResult")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val item = SeriesFragmentArgs.fromBundle(requireArguments()).item
+        Glide.with(binding.imageSeries).load(item.thumbnail.getUrl()).into(binding.imageSeries)
 
+        binding.tvSeriesName.text = item.name
 
-        val item = ComicFragmentArgs.fromBundle(requireArguments()).item
-        Glide.with(binding.imageComics).load(item.thumbnail.getUrl()).into(binding.imageComics)
-
-
-        binding.tvComicName.text = item.name
 
 
 
@@ -45,7 +44,6 @@ class ComicFragment:Fragment() {
                 findNavController().navigateUp()
             }
         })
-
 
 
     }
