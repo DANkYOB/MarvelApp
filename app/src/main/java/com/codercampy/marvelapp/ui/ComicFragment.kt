@@ -36,6 +36,8 @@ class ComicFragment:Fragment() {
 
         binding.tvComicName.text = item.name
 
+        binding.tvDescriptionDetails.text = item.description
+
 
 
 

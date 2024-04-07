@@ -30,9 +30,13 @@ class SeriesFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val item = SeriesFragmentArgs.fromBundle(requireArguments()).item
+
+
         Glide.with(binding.imageSeries).load(item.thumbnail.getUrl()).into(binding.imageSeries)
 
         binding.tvSeriesName.text = item.name
+
+        binding.tvDescriptionSeriesDetails.text = item.description
 
 
 
