@@ -11,12 +11,17 @@ import com.codercampy.marvelapp.model.SpecificCharacter
 class SpecificAdapter :RecyclerView.Adapter<ViewHolder2> () {
 
     private val specificChar = ArrayList<ItemModel>()
+    private var listener: SpecificAdapterListener? = null
 
 
     fun setSpecific(items: List<ItemModel>) {
         val start = specificChar.size
         specificChar.addAll(items)
         notifyItemRangeInserted(start, specificChar.size)
+    }
+
+    fun setListener(listener: SpecificAdapterListener) {
+        this.listener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder2 {
@@ -33,6 +38,10 @@ class SpecificAdapter :RecyclerView.Adapter<ViewHolder2> () {
 
     override fun onBindViewHolder(holder: ViewHolder2, position: Int) {
         holder.bindData2(specificChar[position])
+        holder.binding.root.setOnClickListener {
+            val ch = specificChar[position]
+            listener?.onComicClicked(ch)
+        }
 
     }
 

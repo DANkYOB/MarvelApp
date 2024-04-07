@@ -43,12 +43,13 @@ class CharactersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = CharactersAdapter()
+        binding.recyclerView.adapter = adapter
+
         adapter.setListener {
             findNavController().navigate(
                 CharactersFragmentDirections.actionCharactersFragmentToSpecificCharacterFragment(it)
             )
         }
-        binding.recyclerView.adapter = adapter
         fetchCharactersAndShow()
 
         val lm = binding.recyclerView.layoutManager as GridLayoutManager

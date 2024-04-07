@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.codercampy.marvelapp.PRIVATE_KEY
 import com.codercampy.marvelapp.PUBLIC_KEY
+import com.codercampy.marvelapp.adapter.CharactersAdapter
 import com.codercampy.marvelapp.adapter.SpecificAdapter
 import com.codercampy.marvelapp.api.ApiSource
 import com.codercampy.marvelapp.databinding.FragmentSpecificCharacterBinding
@@ -28,7 +29,6 @@ import retrofit2.Response
 class SpecificCharacterFragment: Fragment () {
 
     private lateinit var binding: FragmentSpecificCharacterBinding
-    private lateinit var adapter2: SpecificAdapter
     private var limit: Int = 51
     private var offset = 0
     private var isFetching = false
@@ -48,13 +48,14 @@ class SpecificCharacterFragment: Fragment () {
 
 
 
-
-
         val item = SpecificCharacterFragmentArgs.fromBundle(requireArguments()).item
 
         Glide.with(binding.imageSpecific).load(item.thumbnail.getUrl()).into(binding.imageSpecific)
 
         binding.tvSpecificChar.text = item.name
+
+
+
 
         val ts = System.currentTimeMillis()
         val hash = "$ts$PRIVATE_KEY$PUBLIC_KEY".md5()
@@ -62,8 +63,18 @@ class SpecificCharacterFragment: Fragment () {
         val adapterComics = SpecificAdapter()
         binding.rvComics.adapter = adapterComics
 
+
+        adapterComics.setListener{
+            findNavController().navigate(SpecificCharacterFragmentDirections.actionSpecificCharacterFragmentToComicFragment())
+        }
+
+
+
+
         val adapterSeries = SpecificAdapter()
         binding.rvSeries.adapter = adapterSeries
+
+
 
 
 
