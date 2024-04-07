@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.codercampy.marvelapp" />
+                  <option name="mobileSdkAppId" value="1:876779974916:android:67488a7edae163f0d7a051" />
+                  <option name="projectId" value="marvel-aa64c" />
+                  <option name="projectNumber" value="876779974916" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
