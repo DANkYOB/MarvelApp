@@ -34,7 +34,7 @@ class CharactersAdapter : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindData(itemModels[position])
-        holder.binding.root.setOnClickListener {
+        holder.binding.clRoot.setOnClickListener {
             val ch = itemModels[position]
             listener?.onCharacterClicked(ch)
         }

@@ -38,7 +38,7 @@ class SpecificAdapter :RecyclerView.Adapter<ViewHolder2> () {
 
     override fun onBindViewHolder(holder: ViewHolder2, position: Int) {
         holder.bindData2(specificChar[position])
-        holder.binding.root.setOnClickListener {
+        holder.binding.ivClRoot.setOnClickListener {
             val ch = specificChar[position]
             listener?.onComicClicked(ch)
         }

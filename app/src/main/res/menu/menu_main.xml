@@ -3,8 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.codercampy.marvelapp.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/nav_account_profile"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="Account"
+        app:showAsAction="never"
+        android:icon="@drawable/icon_account_circle"/>
+
+    <item
+        android:id="@+id/action_chat"
+        android:orderInCategory="100"
+        android:title="Marvel Fan Chats"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_message_text"/>
 </menu>

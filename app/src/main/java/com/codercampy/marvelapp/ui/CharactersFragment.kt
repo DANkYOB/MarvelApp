@@ -9,14 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.codercampy.marvelapp.PRIVATE_KEY
-import com.codercampy.marvelapp.PUBLIC_KEY
+import com.codercampy.marvelapp.Utilities.PRIVATE_KEY
+import com.codercampy.marvelapp.Utilities.PUBLIC_KEY
 import com.codercampy.marvelapp.adapter.CharactersAdapter
 import com.codercampy.marvelapp.api.ApiSource
 import com.codercampy.marvelapp.databinding.FragmentCharactersBinding
-import com.codercampy.marvelapp.md5
+import com.codercampy.marvelapp.Utilities.md5
 import com.codercampy.marvelapp.model.BaseResponse
-import com.codercampy.marvelapp.showShortToast
+import com.codercampy.marvelapp.Utilities.showShortToast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,6 +41,12 @@ class CharactersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.ivAccountIcon.setOnClickListener{
+            findNavController().navigate(
+                CharactersFragmentDirections.actionCharactersFragmentToProfileFragment()
+            )
+    }
 
         adapter = CharactersAdapter()
         binding.recyclerView.adapter = adapter
@@ -97,3 +103,4 @@ class CharactersFragment : Fragment() {
     }
 
 }
+

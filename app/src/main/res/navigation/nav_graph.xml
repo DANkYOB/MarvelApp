@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_charactersFragment_to_seriesFragment"
             app:destination="@id/seriesFragment" />
+        <action
+            android:id="@+id/action_charactersFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/specificCharacterFragment"
@@ -52,4 +55,18 @@
             android:name="item"
             app:argType="com.codercampy.marvelapp.model.ItemModel" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.codercampy.marvelapp.ui.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.codercampy.marvelapp.ui.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat"/>
 </navigation>

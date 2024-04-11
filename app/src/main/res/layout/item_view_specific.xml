@@ -9,9 +9,11 @@
     app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/iv_cl_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:padding="8dp"
+        style="@style/ClickableTextView">
 
         <ImageView
             android:id="@+id/iv_image_rv2"

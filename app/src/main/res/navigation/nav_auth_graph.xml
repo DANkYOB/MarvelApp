@@ -9,7 +9,8 @@
     <fragment
         android:id="@+id/phoneNumberLoginFragment"
         android:name="com.codercampy.marvelapp.Auth.PhoneNumberLoginFragment"
-        android:label="PhoneNumberLoginFragment" >
+        android:label="PhoneNumberLoginFragment"
+        tools:layout="@layout/fragment_phone_number_login">
         <action
             android:id="@+id/action_phoneNumberLoginFragment_to_otpFragment"
             app:destination="@id/otpFragment" />
@@ -17,9 +18,13 @@
     <fragment
         android:id="@+id/otpFragment"
         android:name="com.codercampy.marvelapp.Auth.OtpFragment"
-        android:label="OtpFragment" >
+        android:label="OtpFragment"
+        tools:layout="@layout/fragment_otp">
         <argument
             android:name="verificationId"
+            app:argType="string" />
+        <argument
+            android:name="name"
             app:argType="string" />
     </fragment>
 
