@@ -1,4 +1,4 @@
-package com.codercampy.marvelapp.ui
+package com.codercampy.marvelapp.Auth
 
 import android.content.Intent
 import android.os.Bundle

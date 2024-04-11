@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/phoneNumberLoginFragment"
-        android:name="com.codercampy.firebaseclass.auth.PhoneNumberLoginFragment"
+        android:name="com.codercampy.marvelapp.Auth.PhoneNumberLoginFragment"
         android:label="PhoneNumberLoginFragment" >
         <action
             android:id="@+id/action_phoneNumberLoginFragment_to_otpFragment"
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/otpFragment"
-        android:name="com.codercampy.firebaseclass.auth.OtpFragment"
+        android:name="com.codercampy.marvelapp.Auth.OtpFragment"
         android:label="OtpFragment" >
         <argument
             android:name="verificationId"

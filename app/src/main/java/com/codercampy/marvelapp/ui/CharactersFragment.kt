@@ -52,6 +52,7 @@ class CharactersFragment : Fragment() {
         }
         fetchCharactersAndShow()
 
+
         val lm = binding.recyclerView.layoutManager as GridLayoutManager
         binding.recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 

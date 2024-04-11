@@ -1,4 +1,4 @@
-package com.codercampy.firebaseclass.auth
+package com.codercampy.marvelapp.Auth
 
 import android.content.Intent
 import android.os.Bundle
