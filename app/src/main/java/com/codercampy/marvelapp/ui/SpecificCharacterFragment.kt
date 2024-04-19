@@ -81,9 +81,9 @@ class SpecificCharacterFragment: Fragment () {
         ApiSource.comicsApi.getComics(item.id, ts, PUBLIC_KEY,hash,offset,limit)
             .enqueue(object : Callback<ComicsResponse?> {
             override fun onResponse(p0: Call<ComicsResponse?>, p1: Response<ComicsResponse?>) {
-                val res = p1.body()?.data?.results
+                val res = p1.body()?.data
                 if (res != null) {
-                    adapterComics.setSpecific(res)
+                    adapterComics.setSpecific(res.results)
                 }
 
             }
@@ -101,9 +101,9 @@ class SpecificCharacterFragment: Fragment () {
         ApiSource.seriesApi.getSeries(item.id, ts, PUBLIC_KEY,hash,offset,limit)
             .enqueue(object : Callback<SeriesResponse?> {
                 override fun onResponse(p0: Call<SeriesResponse?>, p1: Response<SeriesResponse?>) {
-                    val res = p1.body()?.data?.results
+                    val res = p1.body()?.data
                     if (res != null) {
-                        adapterSeries.setSpecific(res)
+                        adapterSeries.setSpecific(res.results)
                     }
 
                 }

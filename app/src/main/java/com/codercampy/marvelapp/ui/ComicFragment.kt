@@ -34,10 +34,11 @@ class ComicFragment:Fragment() {
         Glide.with(binding.imageComics).load(item.thumbnail.getUrl()).into(binding.imageComics)
 
 
-        binding.tvComicName.text = item.name
+
+
+        binding.tvComicName.text=item.name
 
         binding.tvDescriptionDetails.text = item.description
-
 
 
 
